@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jQuery-banner-min.js"></script>
+		<style type="text/css">
+			*{margin: 0;padding: 0;list-style: none;}
+			.banner{margin: 0 auto;width: 600px;height: 400px;overflow: hidden;border: 5px solid red;}
+			.choose{
+			z-index: 1000;
+			position: absolute;
+			left:0;
+			top:300px;
+			width:100%;
+			text-align: center;
+			height: 10px;
+		}
+		.choose span{
+			margin-right: 15px;
+			display:inline-block;
+			background: blue;
+			width:10px;
+			height: 10px;
+			border-radius: 10px;
+		}
+		.choose span:hover{
+			background: green;
+		}
+		.choose .green{
+			background: green;
+		}
+		.banner .pre,.next{
+			cursor:pointer;
+			text-align:center;
+			border-radius:20px;
+			display:block;
+			background:#cccccc;
+			opacity:0.4;
+			text-decoration: none;
+			z-index: 200;
+			display:block;
+			width:40px;
+			height: 40px;
+			font-size: 40px;
+			color:red;
+			position: absolute;
+			top:150px;
+		}
+		.banner .pre:hover ,.next:hover{
+			background: deepskyblue;
+		}
+		.banner .pre{
+			left:0px
+		}
+		.banner .next{
+			right: 0px;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="banner">
+			<span class="pre" id="pre">-</span>
+            <span class="next" id="next">+</span>
+			<ul>
+				<li><img src="images/banner.gif"/></li>
+				<li><img src="images/banner1.jpg"/></li>
+				<li><img src="images/banner2.jpg"/></li>
+				<li><img src="images/banner3.jpg"/></li>
+			</ul>
+			<div class="choose" id="dian">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<script>
+			$(".banner").Banner({
+				child:"li",
+				time:'1500',
+				direction:'right',
+				choose:'true',
+				chooseId:'dian',
+				chooseActive:'green',
+				preId:'pre',
+				nextId:'next'
+			});
+		</script>
+	</body>
+</html>
